@@ -15,13 +15,13 @@ guild = {
     'region': "europe" #Region
 }
 
-i = requests.post('https://discordapp.com/api/v6/guilds', headers=headers, json=guild)
+p = requests.post('https://discordapp.com/api/v6/guilds', headers=headers, json=guild)
 
-if i.status_code == 201:
+if p.status_code == 201:
   print('1 Guild created.')
 
-elif i.status_code == 401:
+elif p.status_code == 401:
   print('Token invalid.')
   
-elif "You are being rate limited." in r.text:
+elif "You are being rate limited." in p.text:
   print('You are beign rate limited, please try again later.')
